@@ -14,10 +14,35 @@ import EditionPage from "./pages/edition.page.js";
 import TrainerPage from "./pages/trainer.page";
 import RegionsPage from "./pages/region.page";
 
+
+import { useQuery } from '@apollo/react-hooks';
+import gql from "graphql-tag";
+
 import './App.css';
 
+const GET_POKEMON_INFO = gql`
+{
+    pokemons(first: 150) {
+      id
+      number
+      name,
+      image,
+      evolutions {
+        id,
+        number,
+        name,
+        image
+      }
+    }
+  }`;
+
 function App() {
-  return (
+
+   const { data, loading, error } = useQuery(GET_POKEMON_INFO);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error</p>;
+  if (data) return (
     <div className="App">
 
       <NavBar
@@ -37,11 +62,9 @@ function App() {
       </Switch>
     </Router>
 
-
-
-    
     </div>
   );
+  
 }
 
 export default App;

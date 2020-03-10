@@ -8,7 +8,7 @@ class NavBar extends Component {
       <React.Fragment>
           
           <Navbar bg="primary" expand="lg" variant="dark" >
-          <Navbar.Brand href="/home">Vanilla Pokedex</Navbar.Brand>
+          <Navbar.Brand href="/home">Vanilla Pokédex</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -17,7 +17,7 @@ class NavBar extends Component {
             </Nav>
             
             <Nav>
-              <Nav.Link href="/pokemon">Pokemon</Nav.Link>
+              <Nav.Link href="/pokemon">Pokémon</Nav.Link>
               <Nav.Link href="/editions">Editions</Nav.Link>
               <Nav.Link href="/trainers">Trainers</Nav.Link>
               <Nav.Link href="/regions">Regions</Nav.Link>
